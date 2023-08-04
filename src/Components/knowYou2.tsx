@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, Button, Image } from 'react-native';
 
-const App = () => {
+const KnowYou2 = ({navigation}) => {
   const [selectedNumber, setSelectedNumber] = useState(2);
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [isFreshChecked, setIsFreshChecked] = useState(false);
@@ -167,9 +167,11 @@ const App = () => {
               <Text style={{ color: isMore4Checked ? '#000' : '#ccc', fontWeight: isMore4Checked ? '600' : 'normal'}}>Work experience more than 4 years</Text>
             </TouchableOpacity>
           </View>
-
-          <TouchableOpacity onPress={handleSubmit}>
-            <Button title='Next'/>
+          <TouchableOpacity
+            style={{ backgroundColor: '#44f', padding: 10, alignItems: 'center', borderRadius: 5, width: 245 }}
+            onPress={() => navigation.navigate('knowYou3')}
+          >
+            <Text style={{ color: 'white', fontSize: 12.5 }}>Next</Text>
           </TouchableOpacity>
           </View>
         </View>
@@ -179,4 +181,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default KnowYou2;

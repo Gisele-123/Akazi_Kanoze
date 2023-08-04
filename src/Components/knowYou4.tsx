@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, Image, Button, TextInput, Alert } from 'react-native';
 
-const App = () => {
+const KnowYou4 = () => {
   const [selectedNumber, setSelectedNumber] = useState(1);
   const [isMarketerChecked, setIsMarketerChecked] = useState(false);
   const [isClientChecked, setIsClientChecked] = useState(false);
@@ -20,8 +20,8 @@ const App = () => {
 
   const handleSubmit = () => {
     Alert.alert(
-      'Form submitted!',
-      'Your form has been successfully submitted.',
+      'Congs on Joining Akazi Kanoze',
+      'Post your potential work and connect with people who need your services',
       [
         { text: 'OK', onPress: () => console.log('OK Pressed') }
       ],
@@ -32,6 +32,7 @@ const App = () => {
 
   return (
     <View style={{ flex: 1, padding: 20 }}>
+      <View style={{ flex: 1, padding: 20, borderWidth: 0.2, borderColor: '#ccf', justifyContent: 'center', alignItems: 'center' }}>
       <View style={{flexDirection: 'row', alignItems: 'center', justifyContent: 'center', paddingBottom: 15}}>
           <Text style={{ fontSize: 25, fontWeight: 'bold'}}>Akazi Kanoze</Text>
         </View>
@@ -158,26 +159,25 @@ const App = () => {
               </View>
           </View>
 
-          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', paddingBottom: 12.5 }}>
+          <View 
+                style={{ flex: 1, alignItems: 'center', justifyContent: 'center', paddingBottom: 12.5 }} 
+          >
                 <TouchableOpacity
                   style={{ backgroundColor: '#44f', padding: 10, alignItems: 'center', borderRadius: 5, width: 140, justifyContent: 'center', 
                 }}
-                onPress={()=>{
-                  Alert.alert("Congs on Joining Akazi Kanoze", "Post your potential work and connect with people who need your services.",[
-                      {text:'Yes'},
-                      {text:'No'},
-                  ])
-              }}
+                onPress={() => handleSubmit()}
+                // onPress={() => navigation.navigate('demo')} it is to be called after I click on OK in the alert box that will apear congratulating me to have submitted
+                //on submit mail will come to my email with link to homepage for free trial and on cancel I will just  be moved to login/ register
                 >
-                  <Text 
-                    style={{ color: 'white', fontSize: 12.5 }}
-                  >Next</Text>
+                  <Text style={{ color: 'white', fontSize: 12.5 }}>Next</Text>
                 </TouchableOpacity>
           </View>
           </View>
         </View>
       </View>
+      </View>
     </View>
   );
 };
-export default App;
+
+export default KnowYou4;

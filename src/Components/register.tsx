@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 
-const Register = () => {
+const Register = ({navigation}) => {
   return (
     <View style={{ flex: 1, padding: 15, alignItems: 'center', justifyContent: 'center' }}>
       <View style={{ borderWidth: 0.2, borderColor: "#ccf", padding: 21 }}>
@@ -62,7 +62,8 @@ const Register = () => {
               </View>
               <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', paddingBottom: 12.5 }}>
                 <TouchableOpacity
-                  style={{ backgroundColor: '#44f', padding: 10, alignItems: 'center', borderRadius: 5, width: 140, justifyContent: 'center' }}
+                  style={{ backgroundColor: '#44f', padding: 10, alignItems: 'center', borderRadius: 5, width: 140, justifyContent: 'center', borderColor:'#44f', borderWidth: 1 }}
+                  onPress={() => navigation.navigate('knowYou1')}
                 >
                   <Text style={{ color: 'white', fontSize: 12.5 }}>Submit</Text>
                 </TouchableOpacity>

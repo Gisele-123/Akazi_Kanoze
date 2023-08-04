@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
 
-const App = () => {
+const KnowYou1 = ({navigation}) => {
   const [selectedNumber, setSelectedNumber] = useState(1);
   const [isMarketerChecked, setIsMarketerChecked] = useState(false);
   const [isClientChecked, setIsClientChecked] = useState(false);
@@ -134,7 +134,7 @@ const App = () => {
 
           <TouchableOpacity
             style={{ backgroundColor: '#44f', padding: 10, alignItems: 'center', borderRadius: 5, width: 245 }}
-            onPress={handleSubmit}
+            onPress={() => navigation.navigate('knowYou2')}
           >
             <Text style={{ color: 'white', fontSize: 12.5 }}>Next</Text>
           </TouchableOpacity>
@@ -146,4 +146,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default KnowYou1;

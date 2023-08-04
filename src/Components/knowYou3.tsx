@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 // import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { View, Text, TouchableOpacity, Button, Image } from 'react-native';
 
-const App = () => {
+const KnowYou3 = ({navigation}) => {
   const [selectedNumber, setSelectedNumber] = useState(2);
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [isFreshChecked, setIsFreshChecked] = useState(false);
@@ -186,8 +186,11 @@ const App = () => {
             </TouchableOpacity>
           </View>
 
-          <TouchableOpacity onPress={handleSubmit}>
-            <Button title='Next'/>
+          <TouchableOpacity
+            style={{ backgroundColor: '#44f', padding: 10, alignItems: 'center', borderRadius: 5, width: 245 }}
+            onPress={() => navigation.navigate('knowYou4')}
+          >
+            <Text style={{ color: 'white', fontSize: 12.5 }}>Next</Text>
           </TouchableOpacity>
           </View>
         </View>
@@ -197,4 +200,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default KnowYou3;

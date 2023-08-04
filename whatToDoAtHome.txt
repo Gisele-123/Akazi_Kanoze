@@ -1,0 +1,91 @@
+In React Native, you can link different components together using navigation libraries. Navigation libraries allow you to create a stack of screens (components) and handle navigation between them. The most commonly used navigation libraries in React Native are React Navigation and React Native Navigation.
+
+Here's a brief overview of how you can link different components using React Navigation, which is widely used and well-documented:
+
+1. Install React Navigation:
+
+First, you need to install the required packages. Open your terminal and navigate to your React Native project folder, then run the following command:
+
+```bash
+npm install @react-navigation/native @react-navigation/stack
+```
+
+2. Set up Navigation Container:
+
+In your main application file (usually `App.js`), import the necessary modules and set up the navigation container:
+
+```jsx
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import HomeScreen from './screens/HomeScreen'; // Import your HomeScreen component
+import OtherScreen from './screens/OtherScreen'; // Import your OtherScreen component
+
+const Stack = createStackNavigator();
+
+const App = () => {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Other" component={OtherScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
+
+export default App;
+```
+
+3. Create Components:
+
+Create the different components (screens) you want to navigate between. For example, let's say you have `HomeScreen` and `OtherScreen` components. Define these components in separate files and export them.
+
+```jsx
+// HomeScreen.js
+import React from 'react';
+import { View, Text, Button } from 'react-native';
+
+const HomeScreen = ({ navigation }) => {
+  return (
+    <View>
+      <Text>Welcome to Home Screen</Text>
+      <Button
+        title="Go to Other Screen"
+        onPress={() => navigation.navigate('Other')}
+      />
+    </View>
+  );
+};
+
+export default HomeScreen;
+```
+
+```jsx
+// OtherScreen.js
+import React from 'react';
+import { View, Text, Button } from 'react-native';
+
+const OtherScreen = ({ navigation }) => {
+  return (
+    <View>
+      <Text>Welcome to Other Screen</Text>
+      <Button
+        title="Go back to Home"
+        onPress={() => navigation.goBack()}
+      />
+    </View>
+  );
+};
+
+export default OtherScreen;
+```
+
+4. Navigation:
+
+Now, you have set up navigation between the `HomeScreen` and `OtherScreen` components. When you click the "Go to Other Screen" button on the `HomeScreen`, it will navigate to the `OtherScreen`. Similarly, when you click the "Go back to Home" button on the `OtherScreen`, it will go back to the `HomeScreen`.
+
+This is a basic example of how to link different components using React Navigation. Depending on your app's complexity, you may need to explore more advanced navigation features offered by the library.
+
+
+

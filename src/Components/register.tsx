@@ -1,7 +1,15 @@
 import React from 'react';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../rootStackParamList';
+type registerScreenNavigationProp = StackNavigationProp<RootStackParamList, 'KnowYou4'>;
 
-const Register = ({navigation}) => {
+interface registerProps {
+  navigation: registerScreenNavigationProp;
+}
+
+
+const Register = ({navigation}: registerProps) => {
   return (
     <View style={{ flex: 1, padding: 15, alignItems: 'center', justifyContent: 'center' }}>
       <View style={{ borderWidth: 0.2, borderColor: "#ccf", padding: 21 }}>

@@ -1,7 +1,14 @@
 import React from 'react';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../rootStackParamList';
+type demoScreenNavigationProp = StackNavigationProp<RootStackParamList, 'KnowYou4'>;
 
-const Demo = ({navigation}) => {
+interface demoProps {
+  navigation: demoScreenNavigationProp;
+}
+
+const Demo = ({navigation}:demoProps) => {
   return (
     <View style={{ flex: 1, padding: 15, alignItems: 'center', justifyContent: 'center' }}>
       <View style={{ borderWidth: 0.2, borderColor: "#ccf", padding: 21 }}>
@@ -10,7 +17,7 @@ const Demo = ({navigation}) => {
             <Text style={{ fontSize: 25, fontWeight: 'bold' }}>Request Demo</Text>
           </View>
           <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
-            <Text style={{ fontSize: 18, fontWeight: 'semiBold', color: '#ccc' }}>Start your 7 days free trial now!</Text>
+          <Text style={{ fontSize: 18, fontWeight: '600', color: '#ccc' }}>Start your 7 days free trial now!</Text>
           </View>
           <View>
             <View>

@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
-// import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { View, Text, TouchableOpacity, Button, Image } from 'react-native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../rootStackParamList';
+type knowYou3ScreenNavigationProp = StackNavigationProp<RootStackParamList, 'KnowYou4'>;
 
-const KnowYou3 = ({navigation}) => {
+interface knowYou3Props {
+  navigation: knowYou3ScreenNavigationProp;
+}
+
+
+const KnowYou3 = ({navigation}: knowYou3Props) => {
   const [selectedNumber, setSelectedNumber] = useState(2);
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [isFreshChecked, setIsFreshChecked] = useState(false);

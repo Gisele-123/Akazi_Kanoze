@@ -1,13 +1,14 @@
 import React from 'react';
 import { View, Text, TextInput, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator, Stack } from '@react-navigation/stack';
+import { createStackNavigator} from '@react-navigation/stack';
 import KnowYou1 from './src/Components/knowYou1';
 import KnowYou2 from './src/Components/knowYou2';
 import KnowYou3 from './src/Components/knowYou3';
 import KnowYou4 from './src/Components/knowYou4';
 import Register from './src/Components/register';
 import Demo from './src/Components/demo';
+const Stack = createStackNavigator(); 
 const App = () => {
   return (
     <NavigationContainer>

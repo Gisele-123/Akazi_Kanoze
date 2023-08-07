@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { RootStackParamList } from '../rootStackParamList';
+type knowYou1ScreenNavigationProp = StackNavigationProp<RootStackParamList, 'KnowYou4'>;
 
-const KnowYou1 = ({navigation}) => {
+interface knowYou1Props {
+  navigation: knowYou1ScreenNavigationProp;
+}
+
+
+const KnowYou1 = ({navigation}: knowYou1Props) => {
   const [selectedNumber, setSelectedNumber] = useState(1);
   const [isMarketerChecked, setIsMarketerChecked] = useState(false);
   const [isClientChecked, setIsClientChecked] = useState(false);
